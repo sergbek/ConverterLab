@@ -1,0 +1,37 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColorDark</item>
+        <item name="colorAccent">@color/accentColor</item>
+    </style>
+
+    <style name="MyToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#DEE2E5</item>
+        <item name="android:textColorSecondary">#D6DADD</item>
+    </style>
+
+    <style name="TextViewTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#DEE2E5</item>
+        <item name="android:textColorSecondary">#727272</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/accentColor</item>
+        <item name="tabTextAppearance">@style/MyCustomTextAppearnace</item>
+    </style>
+
+    <style name="MyCustomTextAppearnace" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+</resources>

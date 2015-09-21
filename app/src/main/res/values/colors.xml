@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#607D8B</color>
+    <color name="primaryColorDark">#455A64</color>
+    <color name="accentColor">#FF4081</color>
+    <color name="accentColorLight">#B5FF4C83</color>
+    <color name="lightPrimaryColor">#CFD8DC</color>
+    <color name="backgroundRoot">#EEEEEE</color>
+    <color name="white">#FAFAFA</color>
+    <color name="backgroundTab">#B0BFC6</color>
+    <color name="green">#05616a</color>
+    <color name="detailMenu">#d0d8de</color>
+    <color name="detailMenuDark">#a0a8ae</color>
+
+</resources>

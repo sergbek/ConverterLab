@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Converter Lab</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="inet_address_name">Ссылка на банк в finance.ua:</string>
+    <string name="address">Адрес:</string>
+    <string name="phone">Телефон:</string>
+    <string name="type_org">Тип организации: </string>
+    <string name="city">Город: </string>
+    <string name="region">Область: </string>
+    <string name="share">Share</string>
+    <string name="name_currency">Название валюты</string>
+    <string name="buy_sold">Покупка / \nПродажа</string>
+
+
+    <string name="google_maps_key">AIzaSyBBDnBqYNZWkBn-COEz5B9VMvA6gu32r4s</string>
+    <string name="title_activity_map">MapActivity</string>
+</resources>
