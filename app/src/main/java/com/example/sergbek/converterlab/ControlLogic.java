@@ -58,6 +58,7 @@ public class ControlLogic {
     public void displayMessage() {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(mContext)
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)
+                .setTicker("Начало загрузки данных")
                 .setContentTitle("Начало загрузки данных")
                 .setContentText("Загрузка данных");
         builder.setOngoing(true);

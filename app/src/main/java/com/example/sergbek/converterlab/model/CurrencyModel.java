@@ -56,4 +56,16 @@ public class CurrencyModel {
     public void setFullTitle(String fullTitle) {
         this.fullTitle = fullTitle;
     }
+
+    @Override
+    public String toString() {
+        return "CurrencyModel{" +
+                "abbr='" + abbr + '\'' +
+                ", fullTitle='" + fullTitle + '\'' +
+                ", ask='" + ask + '\'' +
+                ", bid='" + bid + '\'' +
+                ", changeAsk=" + changeAsk +
+                ", changeBit=" + changeBit +
+                '}';
+    }
 }

@@ -172,12 +172,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         public void onReceive(Context context, Intent intent) {
             Log.d("ControlLogic", "done");
 
-
             mOrganizationAdapter = new OrganizationAdapter(mDatabaseController.getAllOrganizations());
             mRecyclerView.setAdapter(mOrganizationAdapter);
 
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(MainActivity.this);
-            notificationManager.cancel(1);
         }
     }
 }

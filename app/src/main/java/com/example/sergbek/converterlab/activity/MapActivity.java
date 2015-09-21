@@ -3,6 +3,7 @@ package com.example.sergbek.converterlab.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.sergbek.converterlab.R;
@@ -72,5 +73,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mToolbar.setTitle(mTitle);
         mToolbar.setSubtitle(mCity);
         setSupportActionBar(mToolbar);
+
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 }

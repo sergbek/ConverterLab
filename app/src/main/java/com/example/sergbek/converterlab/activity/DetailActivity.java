@@ -2,11 +2,13 @@ package com.example.sergbek.converterlab.activity;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.os.PersistableBundle;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.LinearLayout;
 import com.example.sergbek.converterlab.R;
 import com.example.sergbek.converterlab.database.DatabaseController;
 import com.example.sergbek.converterlab.database.DatabaseHelper;
+import com.example.sergbek.converterlab.fragment.DialogShare;
 import com.example.sergbek.converterlab.model.CurrencyModel;
 import com.example.sergbek.converterlab.model.Organization;
 import com.example.sergbek.converterlab.service.LoadService;
@@ -43,7 +46,7 @@ public class DetailActivity extends AppCompatActivity implements SwipeRefreshLay
     private FloatingActionButton mMap;
     private LinearLayout mLinearLayout;
 
-    private static boolean is_Expanded;
+    private boolean is_Expanded;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +62,23 @@ public class DetailActivity extends AppCompatActivity implements SwipeRefreshLay
         settingToolbar();
         settingPullDownRefresh();
 
+        if (savedInstanceState != null)
+            is_Expanded = savedInstanceState.getBoolean("is_Expanded");
+
+
         if (is_Expanded)
             mFrameLayout.setVisibility(View.VISIBLE);
 
+
         setListeners();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("is_Expanded", is_Expanded);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,8 +89,12 @@ public class DetailActivity extends AppCompatActivity implements SwipeRefreshLay
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_share) {
+            DialogShare dialogShare = new DialogShare();
+            Bundle bundle = new Bundle();
+            bundle.putString("id", mOrganization.getId());
+            dialogShare.setArguments(bundle);
+            dialogShare.show(getFragmentManager(), "dialogShare");
         }
 
         return super.onOptionsItemSelected(item);
@@ -157,6 +176,12 @@ public class DetailActivity extends AppCompatActivity implements SwipeRefreshLay
         mToolbar.setTitle(mOrganization.getTitle());
         mToolbar.setSubtitle(mOrganization.getCityId());
         setSupportActionBar(mToolbar);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void setCurrency() {
