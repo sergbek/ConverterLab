@@ -1,3 +1,3 @@
 # ConverterLab
 
-Приложение для показа актуального курса валют с сайта finance.ua
+Application for displaying the current exchange rate from the finance.ua website
